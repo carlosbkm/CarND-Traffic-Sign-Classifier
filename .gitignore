@@ -4,3 +4,9 @@ data
 models
 *.swp
 *.p
+writeup_template.md
+examples/
+lenet.data*
+lenet.index
+lenet.meta
+*.zip
