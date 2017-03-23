@@ -12,3 +12,4 @@ lenet.meta
 *.zip
 checkpoint
 *.backup
+new-test-images/
