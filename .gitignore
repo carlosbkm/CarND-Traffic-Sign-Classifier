@@ -10,3 +10,5 @@ lenet.data*
 lenet.index
 lenet.meta
 *.zip
+checkpoint
+*.backup
