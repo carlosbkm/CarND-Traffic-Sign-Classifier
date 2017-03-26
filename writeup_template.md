@@ -47,16 +47,16 @@ The code for this step is contained in the second code cell of the IPython noteb
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is ? 34799 images
+* The size of test set is ? 12630 images
+* The shape of a traffic sign image is ? 32 x 32 pixels
+* The number of unique classes/labels in the data set is ? 43
 
 ####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third code cell of the IPython notebook.  
+The code for this step is contained in the third code cell of the IPython notebook. Ten images from the training set has benn picked randomly and shown in a row.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Also, in the next cell there is a bar chart which shows the classes distribution along the train samples.
 
 ![alt text][image1]
 
@@ -64,50 +64,54 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
-The code for this step is contained in the fourth code cell of the IPython notebook.
+The code for this step is contained in the sixth code cell of the IPython notebook. 
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided to convert the images to grayscale because getting rid of two channels helps a lot in getting a better processing performance with dealing with a big amount of samples and as it is mentioned in the paper from Pierre Sermanet and Yan LeCunn (http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), training with color channels doesn't make any improvement
+
+Also, I equalized the brightness of the images using histogram equalization. This helps by making easier to extract the traffic sign features from the images with very low and high bright values.
+
+And the most important transformation was to normalize the data, to make the values stay in a range from 0 to 1, dividing them by 255, which is the highest value a b/w image pixel will have. This helps the neural network to learn faster by keeping the weights smaller.
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
 
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
+I used the data from 'valid.p' which comes with the images download from German Traffic Signs as the cross validation data.
 The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
 
-To cross validate my model, I randomly split the training data into a training set and validation set. I did this by ...
+To cross validate my model, I randomly split the training data into a training set and validation set. I did this by using train_test_split function from sci-kit learn python package, taking 20% as the split percentage data.
 
-My final training set had X number of images. My validation set and test set had Y and Z number of images.
+My final training set had 59788 number of images. My validation set had 4410 images and the test set 12630 images.
 
-The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
+The eigth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because after playing with hyperparameters and normalization, I found that in our specific case of Traffic Signs Classifications an augmentation of the data yields the best improvement in learn accuracy.
 
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+I followed a simple approach of slightly flip images. However, another transformations like skew, projection modification, blur, brightness, etc could also be applied and would definitely boost the performance of the network.
 
 
 ####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the seventh cell of the ipython notebook. 
+The code for my final model is located in the 13th cell of the ipython notebook. 
+
+I used a LeNet nn like the one presented for the Mnist problem in the Convolutional Networks lesson of the course.
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16 		|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Flatten		| Input = 5x5x16. Output = 400    									|
+| Fully connected		| Input = 400. Output = 120       									|
+| RELU					|												|
+| Fully connected		| Input = 120. Output = 84       									|
+| RELU					|												|
+| Fully connected		| Input = 84. Output = 43      									|
  
 
 
