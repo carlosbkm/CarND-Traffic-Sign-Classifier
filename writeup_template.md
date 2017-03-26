@@ -135,7 +135,7 @@ In conclusion, the final accuracy of the network could be much more improved by 
 
 I got new images from the German traffic signs site which had been used in some online contests of traffic sign classifier. Then I randomly picked 5 for the test. The images can be downloaded from here: http://benchmark.ini.rub.de/Dataset/GTSRB_Online-Test-Images.zip
 
-<img src="https://cloud.githubusercontent.com/assets/4292837/24336177/c77894aa-128a-11e7-8f5d-e166480e081e.png)" />
+<img src="https://cloud.githubusercontent.com/assets/4292837/24336177/c77894aa-128a-11e7-8f5d-e166480e081e.png" />
 
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. Although the images used are completely new to the train, validation and test set, they are very similar to those, and so the classification obtains very good results.
 
