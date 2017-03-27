@@ -137,7 +137,20 @@ I got new images from the German traffic signs site which had been used in some 
 
 <img src="https://cloud.githubusercontent.com/assets/4292837/24336177/c77894aa-128a-11e7-8f5d-e166480e081e.png" />
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. Although the images used are completely new to the train, validation and test set, they are very similar to those, and so the classification obtains very good results.
+Here are the results of the prediction:
+
+| Image			        |     Prediction	        					|  Difficulty
+|:---------------------:|:---------------------------------------------:| 
+| Yield      		| Yield   									|  A bit blurred. Easy.
+| Priority Road     			| Priority Road  									| Over exposed. Easy.
+| Speed Limit (60 km/h)					| Speed Limit (60 km/h)								|  Highly pixelated and dark light. Easy
+| General Caution      		| General Caution					 				| Highly pixelated. Medium.
+| Roundabout Mandatory			| Roundabout Mandatory      							| Roundabout mandatory. Easy
+
+
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set, which was of 90%. Although the images used are completely new to the train, validation and test set, they are very similar in format an characteristics to those, and for this reason the classification obtains very good results. 
 
 The code for the test on the new images is in the 21st cell of the notebook.
 
