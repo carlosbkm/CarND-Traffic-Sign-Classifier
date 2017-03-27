@@ -139,18 +139,17 @@ I got new images from the German traffic signs site which had been used in some 
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					|  Difficulty
-|:---------------------:|:---------------------------------------------:| 
-| Yield      		| Yield   									|  A bit blurred. Easy.
-| Priority Road     			| Priority Road  									| Over exposed. Easy.
-| Speed Limit (60 km/h)					| Speed Limit (60 km/h)								|  Highly pixelated and dark light. Easy
-| General Caution      		| General Caution					 				| Highly pixelated. Medium.
-| Roundabout Mandatory			| Roundabout Mandatory      							| Roundabout mandatory. Easy
+| Image			        |     Prediction	        					|  Difficulty          |
+|:---------------------:|:---------------------------------------------:|:---------------------------------------------:|
+| Yield      		| Yield   									|  A bit blurred. Easy. |
+| Priority Road     			| Priority Road  									| Over exposed. Easy.  |
+| Speed Limit (60 km/h)					| Speed Limit (60 km/h)								|  Highly pixelated and low brightness. Easy  |
+| General Caution      		| General Caution					 				| Highly pixelated. Medium.  |
+| Roundabout Mandatory			| Roundabout Mandatory      							| Low brightness . Easy  |
 
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set, which was of 90%. Although the images used are completely new to the train, validation and test set, they are very similar in format and characteristics to those, and so the classification obtains very good results. 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
-
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set, which was of 90%. Although the images used are completely new to the train, validation and test set, they are very similar in format an characteristics to those, and for this reason the classification obtains very good results. 
+For this reason we really couldn't conclude whether the model was overfitted or not. It perfoms well with images from the German Traffic Signs site, but it would be necessary to check with images from other sources to check its generalization.
 
 The code for the test on the new images is in the 21st cell of the notebook.
 
