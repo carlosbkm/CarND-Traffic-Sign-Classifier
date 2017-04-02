@@ -38,11 +38,11 @@ In the second cell there is the code to get some basic summary of the data set:
 
 The code for this step is contained in the third code cell of the IPython notebook. Ten images from the training set has benn picked randomly and shown in a row.
 
-<img src="https://cloud.githubusercontent.com/assets/4292837/24335505/cbdac5ce-127e-11e7-9e22-5fd04c0c46d6.png"/>
+<img src="https://cloud.githubusercontent.com/assets/4292837/24590850/ce499c24-17f4-11e7-82e3-fa26130bfaeb.png"/>
 
 Also, in the next cell there is a bar chart which shows the classes distribution along the train samples.
 
-<img src="https://cloud.githubusercontent.com/assets/4292837/24335603/02c45972-1281-11e7-8df0-3d81ce44152e.png" />
+<img src="https://cloud.githubusercontent.com/assets/4292837/24590852/ce4a8dbe-17f4-11e7-923c-c07b16db123b.png" />
 
 By the plot it can be seen that the data is highly unbalanced. Just below, in the fith cell, there is a simple code which prints the number of samples per class. Looking at the output we can see that while there are classes with around 2000 samples, more than half classes are below 500. 
 
@@ -138,7 +138,7 @@ In conclusion, the final accuracy of the network could be much more improved by 
 
 I got new images from the German traffic signs site which had been used in some online contests of traffic sign classifier. Then I randomly picked 5 for the test. The images can be downloaded from here: http://benchmark.ini.rub.de/Dataset/GTSRB_Online-Test-Images.zip
 
-<img src="https://cloud.githubusercontent.com/assets/4292837/24336177/c77894aa-128a-11e7-8f5d-e166480e081e.png" />
+<img src="https://cloud.githubusercontent.com/assets/4292837/24590848/ce4876be-17f4-11e7-8905-143def61c34d.png" />
 
 Here are the results of the prediction:
 
@@ -161,3 +161,7 @@ The code for the test on the new images is in the 21st cell of the notebook.
 The softmax probabilities of my model can be found in the 23rd cell of the notebook:
 
 <img src="https://cloud.githubusercontent.com/assets/4292837/24336235/a25103f0-128b-11e7-86d7-9dd83cd0ce8a.png" />
+
+In the 24th cell there is the code to print the 5 top probabilities for each class. As it can be seen, there is a very high certainty on the winner class for every traffic sign of the new tested images. All of them have a probability of 99-100 percent. Thi is explained by the similarity of the tested images with the ones which were used to train the net (although different set, all of them were taken form the German Traffic signs site).
+
+<img src= https://cloud.githubusercontent.com/assets/4292837/24590990/bb9a8af4-17f7-11e7-82a8-a9842880ceef.png  />
