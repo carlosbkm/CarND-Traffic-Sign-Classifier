@@ -150,6 +150,9 @@ Here are the results of the prediction:
 | No passing      		| No passing					 				| Highly pixelated. Easy.  |
 | Speed limit (30 km/h)			| Speed limit (30 km/h)	      						| Low brightness . Easy  |
 
+The classes as predicted from the nn:
+<img src= https://cloud.githubusercontent.com/assets/4292837/24591043/dbaa501c-17f8-11e7-9481-e9ba7086cf3b.png  />
+
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set, which was of 91.8%. Although the images used are completely new to the train, validation and test set, they are very similar in format and characteristics to those, and so the classification obtains very good results. 
 
 For this reason we really couldn't conclude whether the model was overfitted or not. It perfoms well with images from the German Traffic Signs site, but it would be necessary to check with images from other sources to check its generalization.
